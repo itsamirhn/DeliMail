@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
     'core',
 ]
 
@@ -149,3 +151,5 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 HOST_URL = env('HOST_URL')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap'
