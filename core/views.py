@@ -16,7 +16,7 @@ class MailFormView (LoginRequiredMixin, CreateView):
     login_url = '/admin/'
     model = Mail
     fields = ['to', 'subject', 'message']
-    success_url = reverse_lazy('form')
+    success_url = reverse_lazy('status')
 
     def form_valid(self, form):
         mail: Mail = form.instance
