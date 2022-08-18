@@ -3,9 +3,13 @@ from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 
 from core.models import Mail
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
 
 class MailFormView (LoginRequiredMixin, CreateView):
