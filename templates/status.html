@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-grid gap-3 container">
+  <h3 class="text-center">Last Mails</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">To</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Message</th>
+          <th scope="col">Sent Time</th>
+          <th scope="col">Deliver Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mail in mails %}
+        <tr>
+          <th scope="row">{{ mail.pk }}</th>
+          <th>{{ mail.to }}</th>
+          <th>{{ mail.subject }}</th>
+          <td>{{ mail.message }}</td>
+          <td>{{ mail.sent_at }}</td>
+          <th>{{ mail.delivered_at }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

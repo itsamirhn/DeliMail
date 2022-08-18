@@ -24,6 +24,15 @@ class MailFormView (LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class StatusView(LoginRequiredMixin, TemplateView):
+    template_name = 'status.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mails'] = Mail.objects.all().order_by('-created_at')
+        return context
+
+
 class DeliverView (View):
 
     def get(self, request, uuid, *args, **kwargs):
